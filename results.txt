@@ -1,0 +1,46 @@
+> DATA LOG FOR video_reduction <
+INPUT: 
+OUTPUT: 
+
+> STARTING RUN FOR video_reduction ON 32 THREADS <INPUT ERROR: Usage -> video_reduction input_video_path.mpg output_video_path.mpg #ofThreads
+
+real	0m0.226s
+user	0m0.032s
+sys	0m0.031s
+> END OF RUN FOR video_reduction ON 32 THREADS <
+
+> STARTING RUN FOR video_reduction ON 16 THREADS <INPUT ERROR: Usage -> video_reduction input_video_path.mpg output_video_path.mpg #ofThreads
+
+real	0m0.046s
+user	0m0.035s
+sys	0m0.011s
+> END OF RUN FOR video_reduction ON 16 THREADS <
+
+> STARTING RUN FOR video_reduction ON 8 THREADS <INPUT ERROR: Usage -> video_reduction input_video_path.mpg output_video_path.mpg #ofThreads
+
+real	0m0.046s
+user	0m0.029s
+sys	0m0.017s
+> END OF RUN FOR video_reduction ON 8 THREADS <
+
+> STARTING RUN FOR video_reduction ON 4 THREADS <INPUT ERROR: Usage -> video_reduction input_video_path.mpg output_video_path.mpg #ofThreads
+
+real	0m0.046s
+user	0m0.031s
+sys	0m0.015s
+> END OF RUN FOR video_reduction ON 4 THREADS <
+
+> STARTING RUN FOR video_reduction ON 2 THREADS <INPUT ERROR: Usage -> video_reduction input_video_path.mpg output_video_path.mpg #ofThreads
+
+real	0m0.045s
+user	0m0.025s
+sys	0m0.021s
+> END OF RUN FOR video_reduction ON 2 THREADS <
+
+> STARTING RUN FOR video_reduction ON 1 THREADS <INPUT ERROR: Usage -> video_reduction input_video_path.mpg output_video_path.mpg #ofThreads
+
+real	0m0.046s
+user	0m0.038s
+sys	0m0.008s
+> END OF RUN FOR video_reduction ON 1 THREADS <
+
