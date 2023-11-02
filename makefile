@@ -1,7 +1,11 @@
 EXE := video_reduction
+CUDAEXE := video_reduction_cuda
 
 HDIR := headers
 TRASHDIR := trash
+
+CUDA := nvcc
+CUDALIBS := `pkg-config --cflags --libs opencv4`
 
 CXX := g++
 CXXFLAGS := -g -Wall -pedantic -std=c++20
@@ -20,6 +24,11 @@ ifeq (build,$(firstword $(MAKECMDGOALS)))
   $(eval $(SRC):;@:)
 endif
 
+ifeq (buildcuda,$(firstword $(MAKECMDGOALS)))
+	CUDASRC := $(word 2, $(MAKECMDGOALS))
+  $(eval $(CUDASRC):;@:)
+endif
+
 ifeq (clean,$(firstword $(MAKECMDGOALS)))
 	SRC := 
 endif
@@ -28,11 +37,18 @@ endif
 	#$(error Please specify the source file to build with 'make src=<filename>')
 #endif
 
+CUDASOURCES := $(CUDASRC)
+
 SOURCES := $(SRC)
 OBJ := $(patsubst %.cpp,$(TRASHDIR)/%.o,$(SOURCES))
 DEP := $(OBJ:.o=.d)
 
 build: $(EXE)
+
+buildcuda: $(CUDAEXE)
+
+$(CUDAEXE): $(CUDASOURCES)
+	$(CUDA) $^ -o $@ $(CUDALIBS)
 
 $(EXE): $(OBJ)
 	$(CXX) $^ -o $@ $(CXXFASTFLAGS) $(OPENCVFLAGS) $(OPENMPFLAGS)
